@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <template
+        id="report_saleorder_document"
+        name="report_saleorder_document (in zim_sale_custom)"
+        inherit_id="sale.report_saleorder_document"
+    >
+
+        <xpath expr="//th[@name='th_taxes']" position="before">
+            <th name="th_freight_value" class="text-right">Freight</th>
+        </xpath>
+
+        <xpath expr="//td[@name='td_taxes']" position="before">
+            <td name="td_freight_value" class="text-right">
+                <span t-field="line.freight_value" />
+            </td>
+        </xpath>
+
+    </template>
+
+</odoo>
